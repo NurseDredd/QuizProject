@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Poppins', 'Sans Serif';
+}
+header {
+    width: 100%;
+    height: 90px;
+    display: flex;
+    padding: 0 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: 3.5rem;
+    margin:0;
+    color: rgb(137, 16, 16);
+    flex-wrap: wrap;
+}
+
+#changeBtn {
+ width: 7rem;
+ height: 3rem;
+ position: absolute;
+ top: 20px;
+ right: 16px;
+ font-size: 18px;
+
+}
+
+.contentContainer {
+    height: min-content;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.questionContainer {
+    height: 400px;
+    width: 400px;
+    background-color: rgb(219, 216, 216);
+    border: 2px solid black;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.textContainer {
+    width: 350px;
+    height:150px;
+    background-color: white;
+    margin: 2rem;
+    padding: 2rem;
+}
+
+.answerContainer {
+    margin-right: 110px;
+    height: 200px;
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+}
+
+li {
+    width: 300px;
+}
+
+.buttonContainer {
+    padding: 40px;
+}
+#submit {
+    width: 80px;
+    height: 40px;
+}
+
+.dark{
+    background-color: #222;
+    color: #e6e6e6;
+}
+
+

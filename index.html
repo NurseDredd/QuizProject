@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survival Strategy Quiz</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat&family=Cinzel:wght@500&family=Poppins:wght@300&family=Raleway:wght@500&family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="h1Container">
+    <h1>Survival Strategy Quiz</h1>
+</div>
+    <button id="changeBtn" onclick="changeMode()">Change mode</button>
+</header>
+    <div class="contentContainer">
+        <div class="questionContainer">
+            <div class="textContainer">
+            <p>1. Det är alltid säkrast att dricka vatten direkt från en flod eller insjö under en överlevnadssituation.</p>
+            </div>
+            <div class="answerContainer">
+            <ul>
+            <li><input type="radio" name="question1" value="incorrect"> <label for="question1">Sant</label></li>
+            <li><input type="radio" name="question1" value="correct"> <label for="question1">Falskt</label></li>
+        </ul>
+        </div>
+        </div>
+        <div class="questionContainer">
+            <div class="textContainer">
+            <p>2. Vilket är det mest effektiva sättet att eliminera en zombie enligt traditionell fiktion?</p>
+            </div>
+            <div class="answerContainer">
+            <ul>
+            <li><input type="radio" name="question2" value="incorrect"> <label for="question2">Skjuta dem på valfritt ställe</label></li>
+            <li><input type="radio" name="question2" value="correct"> <label for="question2">Hugga av deras huvuden</label></li>
+            <li><input type="radio" name="question2" value="incorrect"> <label for="question2">Light Saber duell</label></li>
+            <li><input type="radio" name="question2" value="correct"> <label for="question2">Spela död och hoppas att dem går vidare och svälter ihjäl</label></li>
+        </ul>
+        </div>
+        </div>
+        <div class="questionContainer">
+            <div class="textContainer">
+            <p>3. Du har vatten men har inte ätit på snart 48h. Hur länge klarar en människa sig utan att äta?</p>
+            </div>
+            <div class="answerContainer">
+            <ul>
+            <li><input type="radio" name="question3" value="incorrect"> <label for="question3">Ca 7 dagar</label></li>
+            <li><input type="radio" name="question3" value="incorrect"> <label for="question3">Ca 14 dagar</label></li>
+            <li><input type="radio" name="question3" value="incorrect"> <label for="question3">Ca 21 dagar</label></li>
+            <li><input type="radio" name="question3" value="correct"> <label for="question3">Ca 40 dagar</label></li>
+        </ul>
+        </div>
+        </div>
+        <div class="questionContainer">
+            <div class="textContainer">
+            <p>4. Du är vilse i skogen och magen kurrar. Vilka av följande växter är ätliga?</p>
+            </div>
+            <div class="answerContainer">
+            <ul>
+            <li><input type="checkbox" name="question4" value="correct"> <label for="question4">Maskros</label></li>
+            <li><input type="checkbox" name="question4" value="correct"> <label for="question4">Brännässla</label></li>
+            <li><input type="checkbox" name="question4" value="correct"> <label for="question4">Tall</label></li>
+            <li><input type="checkbox" name="question4" value="correct"> <label for="question4">Gräs</label></li>
+        </ul>
+        </div>
+        </div>
+        <div class="buttonContainer">
+            <button id="submitBtn" onclick="submit()">Submit</button>
+            <h2 id="result"></h2>
+    </div>
+    </div>
+</body>
+</html>
