@@ -91,4 +91,17 @@ li {
     color: #e6e6e6;
 }
 
+.dark .questionContainer {
+    border-color: white;
+    background-color: #222
+}
+
+.dark .textContainer  {
+    background-color: #222;
+    border: 2px solid white;
+}
+
+.correctColor {
+background-color: lightgreen;
+}
 
