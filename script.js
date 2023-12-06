@@ -11,13 +11,14 @@ let resultMessage = document.querySelector('h3');
 
 
 function submit () {
+   
    let chosenAnswerArr = []; // deklarerar tom array för valda svarsalternativ
    let chosenAnswerRadio = document.querySelectorAll('input[type="radio"]:checked'); //variabel för radiobuttons
     chosenAnswerRadio.forEach((radio) => { // pushar in valda radiobuttons i svarsarray.
     chosenAnswerArr.push(radio.value);
     });
 
-    
+
     let checkboxArrQ4 = [];
     let checkboxArrQ8 = [];
     let checkboxQ4 = document.querySelectorAll('[name="question4"]');
@@ -32,7 +33,6 @@ function submit () {
     }
 
     let checkboxQ8 = document.querySelectorAll('[name="question8"]');
-    console.log(checkboxQ8);
     checkboxQ8.forEach((checkbox) => {
         if(checkbox.checked && checkbox.value === 'correct'){
         checkboxArrQ8.push(checkbox.value); 
@@ -41,6 +41,9 @@ function submit () {
     if (checkboxArrQ8.length === 3) {
         chosenAnswerArr.push('correct');
     }
+
+    changeColorCheck (checkboxQ4);
+    changeColorCheck (checkboxQ8);
     
     let correctAnswers = chosenAnswerArr.filter((answer) => { // filtrera ut alla rätta svar från array
      return answer === "correct";
@@ -57,14 +60,9 @@ function submit () {
     }
     });
 
-   let incorrectAnswers = chosenAnswerArr.filter((answer) => { // filtrera ut felaktiga svar från array.
-    return answer === "incorrect";
-   });
-   incorrectAnswers.forEach((answer) => {
-   })
    resultDisplay.innerHTML = result; // Visa resultat
 
-   let points = result / 10 ;
+    let points = result / 10 ;
     if (points >= 0.75) {
     resultMessage.style.color = 'green';
     resultMessage.innerHTML = ("Grattis, du är en överlevare!" + " " + "Du fick" + " " + result + " " + "antal rätt");
@@ -83,5 +81,13 @@ function submit () {
 function reset () {
     window.location.reload();
     window.scrollTo(0,0);
-    };
+};
 
+function changeColorCheck (checkboxes) { // funktion för att lägga grön/röd bakgrundsfärg på checkboxar.
+    checkboxes.forEach((checkbox) => {
+        let li = checkbox.closest('li');
+        if (checkbox.checked ) {
+            li.style.backgroundColor = checkbox.value === 'correct' ? 'darkgreen' : 'darkred';
+        }
+    })
+};
