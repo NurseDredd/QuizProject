@@ -43,7 +43,7 @@ h1 {
 }
 
 .questionContainer {
-    height: 400px;
+    min-height: 300px;
     width: 400px;
     background-color: rgb(219, 216, 216);
     border: 2px solid black;
@@ -54,8 +54,8 @@ h1 {
 }
 
 .textContainer {
-    width: 350px;
-    height:150px;
+    width: 370px;
+    height:200px;
     background-color: white;
     margin: 2rem;
     padding: 2rem;
@@ -63,7 +63,7 @@ h1 {
 
 .answerContainer {
     margin-right: 110px;
-    height: 200px;
+    min-height: 150px;
     width: 220px;
     display: flex;
     flex-direction: column;
@@ -81,9 +81,19 @@ li {
 .buttonContainer {
     padding: 40px;
 }
-#submit {
-    width: 80px;
-    height: 40px;
+#submitBtn, #resetBtn{
+    width: 7rem;
+    height: 3rem;
+}
+
+#submitBtn {
+    background-color: black;
+    color: white;
+}
+
+#resetBtn {
+    background-color: rgb(160, 43, 43);
+    color: white;
 }
 
 .dark{

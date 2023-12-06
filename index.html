@@ -63,7 +63,7 @@
             <ul>
             <li><input type="checkbox" name="question4" value="correct"> <label for="question4">Maskros</label></li>
             <li><input type="checkbox" name="question4" value="correct"> <label for="question4">Brännässla</label></li>
-            <li><input type="checkbox" name="question4" value="correct"> <label for="question4">Tall</label></li>
+            <li><input type="checkbox" name="question4" value="incorrect"> <label for="question4">Sprängört</label></li>
             <li><input type="checkbox" name="question4" value="correct"> <label for="question4">Gräs</label></li>
         </ul>
         </div>
@@ -74,8 +74,8 @@
             </div>
             <div class="answerContainer">
             <ul>
-            <li><input type="checkbox" name="question5" value="correct"> <label for="question5">Sant</label></li>
-            <li><input type="checkbox" name="question5" value="incorrect"> <label for="question5">Falskt</label></li>
+            <li><input type="radio" name="question5" value="correct"> <label for="question5">Sant</label></li>
+            <li><input type="radio" name="question5" value="incorrect"> <label for="question5">Falskt</label></li>
 
         </ul>
         </div>
@@ -95,13 +95,13 @@
         </div>
         <div class="questionContainer">
             <div class="textContainer">
-            <p>7. Vad är grundläggande första steg om du hamnar i en snöstorm och vill undvika hypotermi?</p>
+            <p>7. Vad är ett grundläggande första steg om du hamnar i en snöstorm och vill undvika hypotermi?</p>
             </div>
             <div class="answerContainer">
             <ul>
             <li><input type="radio" name="question7" value="incorrect"> <label for="question7">Stanna stilla och vänta på hjälp</label></li>
             <li><input type="radio" name="question7" value="incorrect"> <label for="question7">Bygga en snöigloo för skydd</label></li>
-            <li><input type="radio" name="question7" value="correct"> <label for="question7">Hålla dig rörlig</label></li>
+            <li><input type="radio" name="question7" value="correct"> <label for="question7">Hålla dig aktiv</label></li>
             <li><input type="radio" name="question7" value="incorrect"> <label for="question7">Dricka kallt för att öka kroppstemperaturen</label></li>
         </ul>
         </div>
@@ -112,10 +112,10 @@
             </div>
             <div class="answerContainer">
             <ul>
-            <li><input type="checkbox" name="question8" value="correct"> <label for="question8">Göra upp en eld</label></li>
-            <li><input type="checkbox" name="question8" value="correct"> <label for="question8">Trumma på trä</label></li>
-            <li><input type="checkbox" name="question8" value="correct"> <label for="question8">Ropa högt</label></li>
-            <li><input type="checkbox" name="question8" value="incorrect"> <label for="question8">Göra piruetter</label></li>
+            <li><input type="checkbox" name="question8" value="correct" id="correct"> <label for="question8">Göra upp en eld</label></li>
+            <li><input type="checkbox" name="question8" value="correct" id="correct"> <label for="question8">Trumma på trä</label></li>
+            <li><input type="checkbox" name="question8" value="correct" id="correct"> <label for="question8">Ropa högt</label></li>
+            <li><input type="checkbox" name="question8" value="incorrect" id="incorrect"> <label for="question8">Göra piruetter</label></li>
         </ul>
         </div>
         </div>
@@ -126,30 +126,30 @@
             <div class="answerContainer">
             <ul>
             <li><input type="radio" name="question9" value="incorrect"> <label for="question9">En stark laserpekare</label></li>
-            <li><input type="radio" name="question9" value="incorrect"> <label for="question9">En bok om mänsklig kultur</label></li>
-            <li><input type="radio" name="question9" value="correct"> <label for="question9">En ficklampa</label></li>
+            <li><input type="radio" name="question9" value="correct"> <label for="question9">En bok om mänsklig kultur</label></li>
+            <li><input type="radio" name="question9" value="incorrect"> <label for="question9">En ficklampa</label></li>
             <li><input type="radio" name="question9" value="incorrect"> <label for="question9">En karta över jordens geografi</label></li>
         </ul>
         </div>
         </div>
         <div class="questionContainer">
             <div class="textContainer">
-            <p>9. Vilket av följande är en grundläggande regel för att undvika att förlora sig själv i en skog eller vildmark?</p>
+            <p>10. Vilket av följande är en grundläggande regel för att undvika att gå vilse i skog och vildmark?</p>
             </div>
             <div class="answerContainer">
             <ul>
-            <li><input type="radio" name="question9" value="incorrect"> <label for="question9">Gå alltid rakt framåt och undvik att svänga</label></li>
-            <li><input type="radio" name="question9" value="incorrect"> <label for="question9">Märk din väg med tydliga spår så att du kan hitta tillbaka.</label></li>
-            <li><input type="radio" name="question9" value="correct"> <label for="question9">Lita alltid på ditt minne och undvik att använda kartor.</label></li>
-            <li><input type="radio" name="question9" value="incorrect"> <label for="question9">Använd din mobiltelefon för att följa GPS och undvik att tänka för mycket på riktningen.</label></li>
+            <li><input type="radio" name="question10" value="incorrect"> <label for="question10">Gå alltid rakt framåt och undvik att svänga</label></li>
+            <li><input type="radio" name="question10" value="correct"> <label for="question10">Märk din väg med tydliga spår så att du kan hitta tillbaka.</label></li>
+            <li><input type="radio" name="question10" value="incorrect"> <label for="question10">Lita alltid på ditt minne och undvik att använda kartor.</label></li>
+            <li><input type="radio" name="question10" value="incorrect"> <label for="question10">Använd din mobiltelefon för att följa GPS och undvik att tänka för mycket på riktningen.</label></li>
         </ul>
         </div>
         </div>
     
         <div class="buttonContainer">
             <button id="submitBtn" onclick="submit()">Submit</button>
-            <button id="reset" onclick="reset()">Reset</button>
-            <h2 id="result">0</h2>
+            <button id="resetBtn" onclick="reset()">Reset</button>
+            <h3><span id="result"></span></h3>
     </div>
     </div>
 </body>
