@@ -42,8 +42,9 @@ function submit () {
         chosenAnswerArr.push('correct');
     }
 
-    changeColorCheck (checkboxQ4);
-    changeColorCheck (checkboxQ8);
+    changeColorCheck (checkboxQ4); // Kör funktion för att ändra bakgrundsfärg li beroende på rätt/fel svar.
+    changeColorCheck (checkboxQ8); // Kör funktion för att ändra bakgrundsfärg li beroende på rätt/fel svar.
+    disableInputs (); // Kör funktion för att disable alla inputs.
     
     let correctAnswers = chosenAnswerArr.filter((answer) => { // filtrera ut alla rätta svar från array
      return answer === "correct";
@@ -62,25 +63,18 @@ function submit () {
 
    resultDisplay.innerHTML = result; // Visa resultat
 
-    let points = result / 10 ;
+    let points = result / 10 ; // Beräkna procent av poäng och visa olika text/färg beroende på resultat.
     if (points >= 0.75) {
     resultMessage.style.color = 'green';
-    resultMessage.innerHTML = ("Grattis, du är en överlevare!" + " " + "Du fick" + " " + result + " " + "antal rätt");
+    resultMessage.innerHTML = ("Grattis, du är en överlevare!" + " " + "Du fick" + " " + result + " " + "antal rätt.");
     } else if (points < 0.75 && points >= 0.5) {
     resultMessage.style.color = 'orange';
-    resultMessage.innerHTML = ("Med lite tur överlever du kanske.." + " " + "Du fick" + " " + result + " " + "antal rätt");
+    resultMessage.innerHTML = ("Med lite tur överlever du kanske.." + " " + "Du fick" + " " + result + " " + "antal rätt.");
     } else if (points < 0.5) {
     resultMessage.style.color = 'red';
-    resultMessage.innerHTML = ("Du skulle inte överleva en dag!" + " " + "Du fick" + " " + result + " " + "antal rätt");
+    resultMessage.innerHTML = ("Du skulle inte överleva en dag!" + " " + "Du fick" + " " + result + " " + "antal rätt.");
     };
 
-};
-
-
-
-function reset () {
-    window.location.reload();
-    window.scrollTo(0,0);
 };
 
 function changeColorCheck (checkboxes) { // funktion för att lägga grön/röd bakgrundsfärg på checkboxar.
@@ -90,4 +84,19 @@ function changeColorCheck (checkboxes) { // funktion för att lägga grön/röd 
             li.style.backgroundColor = checkbox.value === 'correct' ? 'darkgreen' : 'darkred';
         }
     })
+};
+
+function disableInputs () { // funktion för att stänga av radiobtns/checkboxes och därmed förhindra att ändra svar efter man tryckt "submit".
+    document.querySelectorAll('input[type="checkbox"]').forEach((radio) => {
+        radio.disabled = true;
+    });
+    
+    document.querySelectorAll('input[type="radio"]').forEach((checkbox) => {
+        checkbox.disabled = true;
+    });
+};
+
+function reset () { // funktion för att starta om quizet och scrolla tillbaka till topp.
+    window.location.reload();
+    window.scrollTo(0,0);
 };
