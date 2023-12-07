@@ -57,8 +57,13 @@ h1 {
     width: 370px;
     height:200px;
     background-color: white;
+    border-radius: 7px;
     margin: 2rem;
     padding: 2rem;
+}
+
+em {
+    font-size: 0.9rem;
 }
 
 .answerContainer {
@@ -92,6 +97,7 @@ li {
 }
 
 #resetBtn {
+    display: none;
     background-color: rgb(160, 43, 43);
     color: white;
 }
@@ -102,7 +108,7 @@ li {
 }
 
 .dark .questionContainer {
-    border-color: white;
+    border-color: #E0E722;
     background-color: #222
 }
 
@@ -111,7 +117,8 @@ li {
     border: 2px solid white;
 }
 
-.correctColor {
-background-color: lightgreen;
+.dark #submitBtn {
+    background-color: lightgrey;
+    color: black;
 }
 

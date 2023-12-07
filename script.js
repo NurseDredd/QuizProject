@@ -6,7 +6,8 @@ function changeMode() {
 let result = 0;
 let resultDisplay = document.querySelector("#result");
 let resultMessage = document.querySelector('h3');
-
+let resetBtn = document.querySelector('#resetBtn');
+let submitBtn = document.querySelector('#submitBtn');
 
 
 
@@ -66,25 +67,40 @@ function submit () {
     let points = result / 10 ; // Beräkna procent av poäng och visa olika text/färg beroende på resultat.
     if (points >= 0.75) {
     resultMessage.style.color = 'green';
-    resultMessage.innerHTML = ("Grattis, du är en överlevare!" + " " + "Du fick" + " " + result + " " + "antal rätt.");
+    resultMessage.innerHTML = ("Grattis, du är en sann överlevare!" + " " + "Du fick" + " " + result + " " + "av 10 antal rätt.");
     } else if (points < 0.75 && points >= 0.5) {
     resultMessage.style.color = 'orange';
-    resultMessage.innerHTML = ("Med lite tur överlever du kanske.." + " " + "Du fick" + " " + result + " " + "antal rätt.");
+    resultMessage.innerHTML = ("Med lite tur överlever du kanske.." + " " + "Du fick" + " " + result + " " + "av 10 antal rätt.");
     } else if (points < 0.5) {
     resultMessage.style.color = 'red';
-    resultMessage.innerHTML = ("Du skulle inte överleva en dag!" + " " + "Du fick" + " " + result + " " + "antal rätt.");
+    resultMessage.innerHTML = ("Du skulle inte överleva en dag!" + " " + "Du fick" + " " + result + " " + "av 10 antal rätt.");
     };
+    
+    submitBtn.style.display = 'none'; //Dölj submitBtn och byt ut mot resetBtn
+    resetBtn.style.display = 'block';
 
 };
 
-function changeColorCheck (checkboxes) { // funktion för att lägga grön/röd bakgrundsfärg på checkboxar.
+function changeColorCheck (checkboxes) {
+    let numOfCorrect = 0; // funktion för att lägga grön/röd bakgrundsfärg på checkboxar.
+    checkboxes.forEach((checkbox) => {
+        if (checkbox.checked && checkbox.value === 'correct') {
+            numOfCorrect++;
+        }
+    });
     checkboxes.forEach((checkbox) => {
         let li = checkbox.closest('li');
-        if (checkbox.checked ) {
-            li.style.backgroundColor = checkbox.value === 'correct' ? 'darkgreen' : 'darkred';
+
+        if (checkbox.checked && numOfCorrect === 3) {
+            li.style.backgroundColor = 'darkgreen';
+        } else if (checkbox.checked) {
+            li.style.backgroundColor = 'darkred';
         }
-    })
-};
+    });
+}
+         
+    
+        
 
 function disableInputs () { // funktion för att stänga av radiobtns/checkboxes och därmed förhindra att ändra svar efter man tryckt "submit".
     document.querySelectorAll('input[type="checkbox"]').forEach((radio) => {
