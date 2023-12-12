@@ -1,11 +1,12 @@
 function changeMode() {
-    let element = document.body;
-    element.classList.toggle("dark");
+    let body = document.body;
+    let changeBtn = document.getElementById('changeBtn');
+    body.classList.toggle("dark");
+    changeBtn.textContent = body.classList.contains('dark') ? "Light mode" : "Dark mode"; // Använder ternära operator (aka WTF), classlist "dark" ändra knapptext till Light, annars dark.
 }
 
 let result = 0;
-let resultDisplay = document.querySelector("#result");
-let resultMessage = document.querySelector('h3');
+let resultMessage = document.querySelector('#result');
 let resetBtn = document.querySelector('#resetBtn');
 let submitBtn = document.querySelector('#submitBtn');
 
@@ -56,13 +57,13 @@ function submit () {
     chosenAnswerRadio.forEach((radio) => {
         let parentLi = radio.closest('li'); //definerar list närmast radioinput
     if (radio.value === "correct") {
-        parentLi.style.backgroundColor = 'darkgreen'; //om rätt svar - grön färg
+        parentLi.style.backgroundColor = '#77DD77'; //om rätt svar - grön färg
     } else {
-        parentLi.style.backgroundColor = 'darkred'; // annars röd färg
+        parentLi.style.backgroundColor = '#d62121'; // annars röd färg
     }
     });
 
-   resultDisplay.innerHTML = result; // Visa resultat
+   resultMessage.innerHTML = result; // Visa resultat
 
     let points = result / 10 ; // Beräkna procent av poäng och visa olika text/färg beroende på resultat.
     if (points >= 0.75) {
@@ -90,11 +91,10 @@ function changeColorCheck (checkboxes) {
     });
     checkboxes.forEach((checkbox) => {
         let li = checkbox.closest('li');
-
         if (checkbox.checked && numOfCorrect === 3) {
-            li.style.backgroundColor = 'darkgreen';
+            li.style.backgroundColor = "#77DD77";
         } else if (checkbox.checked) {
-            li.style.backgroundColor = 'darkred';
+            li.style.backgroundColor = '#d62121';
         }
     });
 }
