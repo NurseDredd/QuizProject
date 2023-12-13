@@ -10,7 +10,7 @@ function changeMode() {
     let body = document.body;
     let changeBtn = document.getElementById('changeBtn');
     body.classList.toggle("dark");
-    changeBtn.textContent = body.classList.contains('dark') ? "Light mode" : "Dark mode"; // Använder ternära operator (aka WTF), classlist "dark" ändra knapptext till Light, annars dark.
+    changeBtn.textContent = body.classList.contains('dark') ? "Light mode" : "Dark mode"; // Använder ternary operator (aka WTF), classlist "dark" ändra knapptext till Light, annars dark.
 };
 
 // Funktion för submit-onclick
@@ -62,14 +62,14 @@ function submit () {
     });
 
     // Räkna antal procent rätt/fel och visa olika text/färg beroende på resultat.
-    let points = result / 10 ; // Delar resultatet med antal frågor
-    if (points >= 0.75) { // Om poäng är lika med eller högre än 75%
+    let points = result / 10 ; // Delar resultatet med antal frågor för poäng
+    if (points >= 0.75) { // Om poäng är lika med eller högre än 0.75 (75%)
     resultMessage.style.color = 'green';
     resultMessage.innerHTML = ("Grattis, du är en sann överlevare!" + " " + "Du fick" + " " + result + " " + "av 10 antal rätt.");
-     } else if (points < 0.75 && points >= 0.5) { // Om poäng är mindre än 75% och lika med eller högre än 50%
+     } else if (points >= 0.5) { // Om poäng är lika med eller högre än 0.5 (50%)
     resultMessage.style.color = 'orange';
     resultMessage.innerHTML = ("Med lite tur överlever du kanske.." + " " + "Du fick" + " " + result + " " + "av 10 antal rätt.");
-    } else { // Om poäng är mindre än 50%
+    } else { // Om poäng är mindre än 0.5 (50%)
     resultMessage.style.color = 'red';
     resultMessage.innerHTML = ("Du skulle inte överleva en dag!" + " " + "Du fick" + " " + result + " " + "av 10 antal rätt.");
     };
