@@ -27,7 +27,7 @@ h1 {
 
 #changeBtn {
  background-color: white;
- width: 7rem;
+ width: 5rem;
  height: 3rem;
  position: absolute;
  top: 1rem;
@@ -104,6 +104,10 @@ li {
     margin: 2px;
 }
 
+input {
+    accent-color: #D2691E;
+}
+
 .buttonContainer {
     height: 9rem;
 }
@@ -163,7 +167,58 @@ h3 {
     background-color: #bf611e;
     color: #e6e6e6;
     border: 1px solid #e6e6e6;
+    box-shadow: 10px 10px 30px black;
 }
+
+.dark .modal-content {
+    background-color: #313638;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: #fefefe;
+    color: #D2691E;
+    text-align: center;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    border: 2px solid #D2691E;
+    border-radius: 20px;
+    position: relative;
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaaaaa;
+    float:right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 0;
+    right: 10px;    
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
 
 /* Media-query för mobilvy. */
 

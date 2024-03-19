@@ -10,6 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Allerta+Stencil&family=Caveat&family=Cinzel:wght@500&family=Poppins:wght@300&family=Raleway:wght@500&family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="script.js" defer></script>
 </head>
 <body>
@@ -17,8 +18,17 @@
         <div class="h1Container">
     <h1>Survival Strategy Quiz</h1>
 </div>
-    <button id="changeBtn" onclick="changeMode()">Dark mode</button>
+    <button id="changeBtn" onclick="changeMode()">Dark <i class="fa fa-moon-o"></i></button>
 </header>
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p>Du behöver svara på samtliga frågor innan du kan rätta!</p>
+    </div>
+  
+  </div>
     <div class="contentContainer">
         <div class="questionContainer">
             <div class="textContainer">
@@ -40,7 +50,7 @@
             <li><input type="radio" name="question2" value="incorrect"> <label for="question2">Skjuta dem på valfritt ställe</label></li>
             <li><input type="radio" name="question2" value="correct"> <label for="question2">Hugga av deras huvuden</label></li>
             <li><input type="radio" name="question2" value="incorrect"> <label for="question2">Lightsaber-duell</label></li>
-            <li><input type="radio" name="question2" value="correct"> <label for="question2">Spela död och hoppas att dem går vidare och svälter ihjäl</label></li>
+            <li><input type="radio" name="question2" value="incorrect"> <label for="question2">Spela död och hoppas att dem går vidare och svälter ihjäl</label></li>
         </ul>
         </div>
         </div>
@@ -151,8 +161,8 @@
         </div>
         <h3><span id="result"></span></h3>
         <div class="buttonContainer">
-            <button id="submitBtn" onclick="submit()">Submit</button>
-            <button id="resetBtn" onclick="reset()">Reset</button>
+            <button id="submitBtn" onclick="if (validation()) submit()">Rätta</button>
+            <button id="resetBtn" onclick="reset()">Spela igen</button>
     </div>
     </div>
 </body>

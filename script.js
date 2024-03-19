@@ -4,17 +4,44 @@ let result = 0;
 let resultMessage = document.querySelector('#result');
 let resetBtn = document.querySelector('#resetBtn');
 let submitBtn = document.querySelector('#submitBtn');
+let correctInputs = document.querySelectorAll('input[value="correct"]');
+let modal = document.getElementById("myModal");
 
 // Funktion för att toggla mellan dark/lightmode onclick.
 function changeMode() { 
     let body = document.body;
     let changeBtn = document.getElementById('changeBtn');
+    let moonIcon = '<i class ="fa fa-moon-o"></i>';
+    let sunIcon = '<i class ="fa fa-sun-o"></i>';
     body.classList.toggle("dark");
-    changeBtn.textContent = body.classList.contains('dark') ? "Light mode" : "Dark mode"; // Använder ternary operator (aka WTF), classlist "dark" ändra knapptext till Light, annars dark.
+    changeBtn.innerHTML = body.classList.contains('dark') ? "Light " + sunIcon : "Dark " + "" + moonIcon; // Använder ternary operator (aka WTF), classlist "dark" ändra knapptext till Light, annars dark.
 };
 
+function validation () {
+    let allInputs = document.querySelectorAll('input[type="radio"]:checked, input[type="checkbox"]:checked');
+    if (allInputs.length === 10) {
+        modal.style.display = "block";
+        return false;
+    }
+    return true;
+    } 
+    var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+    modal.style.display = "none";
+    }
+
+// When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+    if (event.target == modal) {
+    modal.style.display = "none";
+  }
+};
 // Funktion för submit-onclick
 function submit () {
+
+    validation ()
    
    let chosenAnswerArr = []; // deklarerar tom array för valda svarsalternativ
    let chosenAnswerRadio = document.querySelectorAll('input[type="radio"]:checked'); //variabel för radiobuttons
@@ -98,9 +125,18 @@ function changeColorCheck (checkboxes) {
             li.style.backgroundColor = '#d62121'; // ändra färg på li till röd
         }
     });
+
+    showAnswers ();
 };
          
-    
+    function showAnswers () {
+        let correct = document.querySelectorAll('input[type="radio"][value="correct"]:not(:checked), input[type="checkbox"][value="correct"]:not(:checked)');
+            
+        correct.forEach((answer) => {
+            let list = answer.closest('li');
+            list.style.border = '2px solid green';
+        })
+    };
         
 
 function disableInputs () { // funktion för att stänga av radiobtns/checkboxes och därmed förhindra att ändra svar efter man tryckt "submit".
@@ -111,6 +147,7 @@ function disableInputs () { // funktion för att stänga av radiobtns/checkboxes
     document.querySelectorAll('input[type="radio"]').forEach((checkbox) => {
         checkbox.disabled = true;
     });
+    window.scrollTo(0,0);
 };
 
 function reset () { // funktion för att starta om quizet och scrolla tillbaka till topp.
