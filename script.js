@@ -18,8 +18,9 @@ function changeMode() {
 };
 
 function validation () {
-    let allInputs = document.querySelectorAll('input[type="radio"]:checked, input[type="checkbox"]:checked');
-    if (allInputs.length === 10) {
+    let allCheckboxQ = document.querySelectorAll('input[type="checkbox"]:checked');
+    let allRadioQ = document.querySelectorAll('input[type="radio"]:checked');
+    if (allCheckboxQ.length < 2 || allRadioQ.length < 8) {
         modal.style.display = "block";
         return false;
     }
