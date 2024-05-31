@@ -1,11 +1,11 @@
 School assignment - Javascript 1
 
-Description
+Description:
 You have been tasked with creating a quiz application. 
 Users should be able to answer questions and receive feedback on whether their answers are correct or incorrect. 
 The application should function without any major bugs. You are free to choose the questions that will be included in the quiz.
 
-Requirements
+Requirements:
 Grade G
 The quiz contains 10 questions. The questions consist of true/false statements with two possible answers: True or False.
 In addition to answering questions, the user should be able to switch the page appearance between dark mode and light mode.
@@ -15,7 +15,7 @@ Display the number of correct answers the user got. Use color and text to inform
 50%-75% - Good (yellow/orange)
 75% - Great job (green)
 
-Grade VG
+Grade VG:
 All requirements for Grade G are met.
 The questions should consist of a mix of the following types (at least 2 of each type):
 True/false statements - (Two answer options - True or False)
